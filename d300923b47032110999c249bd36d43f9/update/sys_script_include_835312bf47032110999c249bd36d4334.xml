@@ -11,7 +11,7 @@
 Usecase.prototype = {
     initialize: function() {},
 
-    gatherRecords: function() {
+    getAnnotation: function() {
         return 'annotation';
     },
 
@@ -21,13 +21,13 @@ Usecase.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-02 17:34:55</sys_created_on>
         <sys_id>835312bf47032110999c249bd36d4334</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Usecase</sys_name>
         <sys_package display_value="update-set-annotator" source="x_376477_upd_st_an">d300923b47032110999c249bd36d43f9</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="update-set-annotator">d300923b47032110999c249bd36d43f9</sys_scope>
         <sys_update_name>sys_script_include_835312bf47032110999c249bd36d4334</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-02 17:44:04</sys_updated_on>
+        <sys_updated_on>2023-06-02 17:52:21</sys_updated_on>
     </sys_script_include>
 </record_update>
