@@ -13,14 +13,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-02 17:28:59</sys_created_on>
         <sys_id>66819efb47032110999c249bd36d4371</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="update-set-annotator" source="x_376477_upd_st_an">d300923b47032110999c249bd36d43f9</sys_package>
         <sys_policy/>
         <sys_scope display_value="update-set-annotator">d300923b47032110999c249bd36d43f9</sys_scope>
         <sys_update_name>sys_atf_step_66819efb47032110999c249bd36d4371</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-02 17:36:58</sys_updated_on>
+        <sys_updated_on>2023-06-02 17:43:44</sys_updated_on>
         <table/>
         <test display_value="Usecase">25515afb47032110999c249bd36d43e2</test>
         <timeout/>
@@ -35,15 +35,15 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-02 17:29:00</sys_created_on>
         <sys_id>d6029afb47032110999c249bd36d43b1</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-02 17:36:58</sys_updated_on>
+        <sys_updated_on>2023-06-02 17:43:44</sys_updated_on>
         <value>(function(outputs, steps, params, stepResult, assertEqual) {&#13;
     describe('Usecase', function() {&#13;
         var scriptInclude = new x_376477_upd_st_an.Usecase();&#13;
-        it('should return array', function() {&#13;
+        it('should return test string', function() {&#13;
             var response = scriptInclude.gatherRecords();&#13;
-            expect(response).toEqual([]);&#13;
+            expect(response).toEqual('annotation');&#13;
         });&#13;
     });&#13;
 })(outputs, steps, params, stepResult, assertEqual);&#13;
