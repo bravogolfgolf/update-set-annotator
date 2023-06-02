@@ -13,14 +13,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-02 18:16:20</sys_created_on>
         <sys_id>f8bc523b47432110999c249bd36d43bd</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="update-set-annotator" source="x_376477_upd_st_an">d300923b47032110999c249bd36d43f9</sys_package>
         <sys_policy/>
         <sys_scope display_value="update-set-annotator">d300923b47032110999c249bd36d43f9</sys_scope>
         <sys_update_name>sys_atf_step_f8bc523b47432110999c249bd36d43bd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-02 18:59:53</sys_updated_on>
+        <sys_updated_on>2023-06-02 20:16:44</sys_updated_on>
         <table/>
         <test display_value="TableSysUpdateSet">dc7cdef747432110999c249bd36d4364</test>
         <timeout/>
@@ -49,27 +49,43 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-02 18:16:20</sys_created_on>
         <sys_id>ffdc163b47432110999c249bd36d43a5</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-02 18:59:53</sys_updated_on>
+        <sys_updated_on>2023-06-02 20:16:44</sys_updated_on>
         <value>(function(outputs, steps, params, stepResult, assertEqual) {&#13;
     describe('TableSysUpdateSet', function() {&#13;
         var scriptInclude = new x_376477_upd_st_an.TableSysUpdateSet();&#13;
+        var qgSysUpdateSet = new global.GlideQuery('sys_update_set');&#13;
 &#13;
-        describe('when passed existing Update Set', function() {&#13;
-            var qgSysUpdateSet = new global.GlideQuery('sys_update_set');&#13;
-            var UPDATE_SET_ANNOTATOR = 'd300923b47032110999c249bd36d43f9';&#13;
-&#13;
+        describe('when passed existing global Update Set', function() {&#13;
+            var GLOBAL = 'global';&#13;
             var result = qgSysUpdateSet&#13;
                 .insert({&#13;
-                    name: 'TableSysUpdateSet',&#13;
+                    name: 'TableSysUpdateSetGlobal',&#13;
+                    application: GLOBAL&#13;
+                })&#13;
+                .get();&#13;
+            var request = {&#13;
+                updateSet: result.sys_id&#13;
+            };&#13;
+&#13;
+            it('should return scoped Application SysId', function() {&#13;
+                var response = scriptInclude.getScope(request);&#13;
+                expect(response).toEqual(GLOBAL);&#13;
+            });&#13;
+        });&#13;
+&#13;
+        describe('when passed existing scoped Update Set', function() {&#13;
+            var UPDATE_SET_ANNOTATOR = 'd300923b47032110999c249bd36d43f9';&#13;
+            var result = qgSysUpdateSet&#13;
+                .insert({&#13;
+                    name: 'TableSysUpdateSetScoped',&#13;
                     application: UPDATE_SET_ANNOTATOR&#13;
                 })&#13;
                 .get();&#13;
-&#13;
             var request = {&#13;
                 updateSet: result.sys_id&#13;
-            }&#13;
+            };&#13;
 &#13;
             it('should return scoped Application SysId', function() {&#13;
                 var response = scriptInclude.getScope(request);&#13;
